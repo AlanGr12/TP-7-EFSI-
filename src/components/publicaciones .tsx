@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import "./publicaciones.css";
 import { FaHeart, FaRegHeart, FaRegComment, FaPaperPlane } from "react-icons/fa";
 
@@ -6,6 +7,8 @@ function publicaciones() {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
 
+
+  //vector con los que se crea las publicaciones, start: , amount : y l
   const createPosts = (start, amount, usersList) =>
     Array.from({ length: amount }, (_, index) => {
       const id = start + index;
@@ -25,12 +28,12 @@ function publicaciones() {
     });
 
   useEffect(() => {
-    fetch("https://randomuser.me/api/?results=100")
-      .then((res) => res.json())
-      .then((data) => {
-        setUsers(data.results);
-        setPosts(createPosts(1, 12, data.results));
-      });
+    const fetchUsers = async () => {
+      const res = await axios.get("https://randomuser.me/api/?results=100");
+      setUsers(res.data.results);
+      setPosts(createPosts(1, 12, res.data.results));
+    };
+    fetchUsers();
   }, []);
 
   const loadMorePosts = () => {

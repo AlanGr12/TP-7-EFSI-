@@ -1,6 +1,21 @@
+import { use, useEffect, useState } from "react";
+import axios from "axios";
 import "./historias.css";
 
 function historias() {
+  const [users, setUsers] = useState([]);
+  
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const res = await axios.get("https://randomuser.me/api/?results=100");
+      setUsers(res.data.results);
+      console.log(res.data.results);
+      
+    };
+    fetchUsers();
+  }, []);
+
+
   const stories = [
     "https://picsum.photos/200?1",
     "https://picsum.photos/200?2",
@@ -9,10 +24,9 @@ function historias() {
     "https://picsum.photos/200?5",
     "https://picsum.photos/200?6",
     "https://picsum.photos/200?7",
-    "https://picsum.photos/200?8",
-    "https://picsum.photos/200?9",
-    "https://picsum.photos/200?10"
+    "https://picsum.photos/200?8"
   ];
+  
 
   return (
     <section className="stories-container">
@@ -27,7 +41,8 @@ function historias() {
               <img src={img} alt="story" className="story-image" />
             </div>
 
-            <span className="username">@user_name</span>
+            {/* Los ? son pq al principio vienen users undefined */}
+            <span className="username">@{users[index]?.login?.username || "user"}</span>
           </div>
         ))}
 

@@ -10,6 +10,8 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 
+// Libreria de react-icons para los icons: https://react-icons.github.io/react-icons/
+
 function menu() {
   return (
     <aside className="sidebar">
@@ -27,12 +29,12 @@ function menu() {
 
         <div className="profile-info">
           <div className="name-row">
-            <h2 className="profile-name">Uğur Mercan</h2>
+            <h2 className="profile-name">Alan Vitas</h2>
 
             <FaCheckCircle className="verified-icon" />
           </div>
 
-          <p className="profile-username">@ugur_mercan0</p>
+          <p className="profile-username">@alanvitas</p>
         </div>
 
         {/* Stats */}
