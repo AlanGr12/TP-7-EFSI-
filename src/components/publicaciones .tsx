@@ -30,6 +30,8 @@ function publicaciones() {
   useEffect(() => {
     const fetchUsers = async () => {
       const res = await axios.get("https://randomuser.me/api/?results=100");
+      console.log(res.data);
+      
       setUsers(res.data.results);
       setPosts(createPosts(1, 12, res.data.results));
     };

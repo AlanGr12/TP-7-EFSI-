@@ -21,7 +21,7 @@ function menu() {
 
         <div className="profile-ring">
           <img
-            src="https://picsum.photos/300"
+            src="https://avatars.githubusercontent.com/u/108374610?v=4&size=64"
             alt="profile"
             className="profile-image"
           />

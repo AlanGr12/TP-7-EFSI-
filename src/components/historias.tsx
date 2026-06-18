@@ -7,25 +7,13 @@ function historias() {
   
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await axios.get("https://randomuser.me/api/?results=100");
+      const res = await axios.get("https://randomuser.me/api/?results=8");
       setUsers(res.data.results);
       console.log(res.data.results);
       
     };
     fetchUsers();
   }, []);
-
-
-  const stories = [
-    "https://picsum.photos/200?1",
-    "https://picsum.photos/200?2",
-    "https://picsum.photos/200?3",
-    "https://picsum.photos/200?4",
-    "https://picsum.photos/200?5",
-    "https://picsum.photos/200?6",
-    "https://picsum.photos/200?7",
-    "https://picsum.photos/200?8"
-  ];
   
 
   return (
@@ -35,14 +23,14 @@ function historias() {
       <div className="stories">
         <div className="next-arrow">‹</div>
 
-        {stories.map((img, index) => (
-          <div className="story" key={index}>
+        {users.map((user) => (
+          <div className="story" key={user.login.uuid}>
             <div className="story-ring">
-              <img src={img} alt="story" className="story-image" />
+              <img src={user.picture.medium} alt="story" className="story-image" />
             </div>
 
             {/* Los ? son pq al principio vienen users undefined */}
-            <span className="username">@{users[index]?.login?.username || "user"}</span>
+            <span className="username">@{user.login.username || "user"}</span>
           </div>
         ))}
 
