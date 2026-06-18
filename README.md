@@ -150,4 +150,4 @@ Algunas funcionalidades que podrían agregarse:
 
 ## Autor
 
-Desarrollado por Alan Vitas
+Desarrollado por Alan Vitas y Alan Gordon
