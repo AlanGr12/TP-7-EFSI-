@@ -1,73 +1,153 @@
-# React + TypeScript + Vite
+# Clon de Instagram - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto consiste en el desarrollo de una interfaz inspirada en Instagram utilizando **React** y **CSS**.  
+El objetivo fue replicar un diseño moderno con una estética similar a la aplicación original, trabajando principalmente la maquetación y el diseño visual.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Descripción
 
-## React Compiler
+La aplicación recrea parte de la interfaz de Instagram, incluyendo:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Barra lateral con perfil del usuario
+- Menú de navegación lateral
+- Sección de historias (Stories)
+- Diseño oscuro moderno
+- Distribución utilizando Flexbox
 
-## Expanding the ESLint configuration
+Todo el proyecto fue desarrollado como práctica de **frontend** enfocándose en diseño UI.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tecnologías utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React.js
+- CSS3
+- JavaScript
+- React Icons
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Componentes desarrollados
+
+### Sidebar
+
+Barra lateral ubicada a la izquierda que contiene:
+
+- Foto de perfil con borde estilo Instagram
+- Nombre del usuario
+- Usuario (@username)
+- Badge de verificación
+- Estadísticas del perfil
+  - Seguidores
+  - Likes
+- Menú de navegación
+
+Opciones del menú:
+
+- Home
+- Explore
+- Reels
+- IGTV
+- Notifications
+
+---
+
+### Stories
+
+Sección superior que simula las historias de Instagram.
+
+Incluye:
+
+- Lista horizontal de usuarios
+- Imagen circular
+- Borde con degradado estilo Instagram
+- Nombre de usuario debajo de cada historia
+
+---
+
+## Estructura del proyecto
+
+```bash
+src/
+│
+├── components/
+│   │
+│   ├── Sidebar.jsx
+│   ├── Sidebar.css
+│   │
+│   ├── Stories.jsx
+│   └── Stories.css
+│
+├── App.jsx
+├── App.css
+└── main.jsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Instalación
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Clonar repositorio:
+
+```bash
+git clone URL_DEL_REPOSITORIO
 ```
+
+Entrar a la carpeta:
+
+```bash
+cd nombre-del-proyecto
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar proyecto:
+
+```bash
+npm run dev
+```
+
+---
+
+## Dependencias
+
+Para los íconos se utilizó:
+
+```bash
+npm install react-icons
+```
+
+---
+
+## Objetivos del proyecto
+
+- Practicar React mediante componentes reutilizables
+- Mejorar manejo de CSS y Flexbox
+- Replicar interfaces reales
+- Trabajar diseño frontend moderno
+- Comprender estructura de proyectos React
+
+---
+
+## Mejoras futuras
+
+Algunas funcionalidades que podrían agregarse:
+
+- Feed de publicaciones
+- Sistema de likes
+- Comentarios
+- Responsive para celular
+- Integración con backend
+- Login de usuarios
+- Sistema real de stories
+
+---
+
+## Autor
+
+Desarrollado por Alan Vitas
